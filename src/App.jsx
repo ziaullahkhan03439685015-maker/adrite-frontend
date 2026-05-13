@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import Dashboard from './pages/client/Dashboard.jsx'
+import Dashboard from './pages/client/Dashboard'
 
 
 
@@ -8,8 +8,9 @@ function App() {
 
   return (
     <>
+  <Dashboard/>
   
-        <Dashboard/>
+        
     </>
   )
 }

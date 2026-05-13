@@ -1,22 +1,31 @@
-import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
-import { Bars3Icon, BellIcon, CalendarIcon, FolderIcon, FolderMinusIcon, UsersIcon, XMarkIcon } from '@heroicons/react/24/outline'
-import { FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {faCalendar, faUser} from '@fortawesome/free-regular-svg-icons'
-import { icon } from '@fortawesome/fontawesome-svg-core';
+import React from 'react'
+    
+    
+    
+    import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
+import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
+import Profile from './components/Profile';
 
-import { Profiler } from 'react';
 const navigation = [
-  { name: 'Profile', href: '#',icon:<UsersIcon/>, current: true },
-  { name: 'Team', href: '#',icon:<UsersIcon/>, current: false },
-  { name: 'Support', href: '#',icon : <UsersIcon/>, current: false },
-  { name: 'Calendar', href: '#',icon:<CalendarIcon/>, current: false },
+  
+  { name: 'Profile', href: '#', current: false },
+  { name: 'Project', href: '#', current: false },
+  { name: 'File', href: '#', current: false },
+  {name : 'Team', href:'#', current:false}
 ]
+
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
+
 export default function Dashboard() {
+
+
+  
   return (
-    <Disclosure as="nav" className="relative bg-red-800">
+    <>
+    <Profile/>
+    <Disclosure as="nav" className="relative bg-blue-800">
       <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
         <div className="relative flex h-16 items-center justify-between">
           <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
@@ -29,7 +38,8 @@ export default function Dashboard() {
             </DisclosureButton>
           </div>
           <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-            <div className="flex shrink-0 items-center">   
+            <div className="flex shrink-0 items-center">
+              
             </div>
             <div className="hidden sm:ml-6 sm:block">
               <div className="flex space-x-4">
@@ -37,19 +47,13 @@ export default function Dashboard() {
                   <a
                     key={item.name}
                     href={item.href}
-                    
                     aria-current={item.current ? 'page' : undefined}
                     className={classNames(
                       item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-white/5 hover:text-white',
-                      'rounded-md px-3 py-2 text-sm font-medium flex items-center gap-2',
+                      'rounded-md px-3 py-2 text-sm font-medium',
                     )}
                   >
-                    <span>
-                    {item.name}</span>
-                    <span className='mr-2 w-6 h-6'>
-                      {item.icon}
-                    </span>
-                    
+                    {item.name}
                   </a>
                 ))}
               </div>
@@ -62,7 +66,7 @@ export default function Dashboard() {
             >
               <span className="absolute -inset-1.5" />
               <span className="sr-only">View notifications</span>
-              <BellIcon aria-hidden="true" className="size-6 justify-center" />
+              <BellIcon aria-hidden="true" className="size-6" />
             </button>
 
             {/* Profile dropdown */}
@@ -70,13 +74,8 @@ export default function Dashboard() {
               <MenuButton className="relative flex rounded-full focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">
                 <span className="absolute -inset-1.5" />
                 <span className="sr-only">Open user menu</span>
-                <FontAwesomeIcon icon={faUser} />
-                                                   
+                
 
-
-
-
-                  
               </MenuButton>
 
               <MenuItems
@@ -132,6 +131,16 @@ export default function Dashboard() {
         </div>
       </DisclosurePanel>
     </Disclosure>
+    </>
   )
 }
 
+    
+    
+    
+    
+    
+
+
+
+  
