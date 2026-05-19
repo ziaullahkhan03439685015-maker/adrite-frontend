@@ -6,9 +6,11 @@ import Status from './Status'
 const Section2 = () => {
   return (
     <div className='w-250 h-185 bg-red-700 '>
-
-<div className='w-30 h-30 bg-blue-500 m-5'></div>
-
+<h4 className='font-bold text-white '>Client Profile</h4>
+<div className='w-60 h-30 bg-amber-300'>
+<div className='w-25 h-25 bg-blue-500 m-5 rounded-2xl'></div>
+<div className='w-30 h-30 bg-green-500'></div>
+</div>
 <div className='h-15 w-250 bg-orange-300 flex justify-around '>
   <Task/>
   <Task/>

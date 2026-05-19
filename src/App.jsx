@@ -10,7 +10,7 @@ function App() {
 
 
   return (
-    <div className=' bg-blue-600 flex gap-5'>
+    <div className=' bg-blue-600 flex gap-2'>
 
 
 <Section1/>
